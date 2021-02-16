@@ -1,14 +1,18 @@
 package com.experiencers.data.remote.datasource
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-import java.util.*
+object Retrofit {
+    private var instance: Retrofit? = null
+    private val baseUrl: String = "https://openapi.naver.com"
 
-data class Movie (
-    val title: String,
-    val link: String,
-    val image: String,
-    val subTitle: String,
-    val pupDate: Date,
-    val director: String,
-    val actor: String,
-    val userRating: Integer
-)
+    fun getInstance(): Retrofit {
+        if (instance == null) {
+            instance = Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
+        return instance!!
+    }
+}
