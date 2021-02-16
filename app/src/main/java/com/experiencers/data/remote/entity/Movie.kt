@@ -1,14 +1,9 @@
 package com.experiencers.data.remote.entity
 
-import java.util.*
-
-data class Movie (
-    val title: String,
-    val link: String,
-    val image: String,
-    val subTitle: String,
-    val pupDate: Date,
-    val director: String,
-    val actor: String,
-    val userRating: Integer
+data class Movie(
+    val lastBuildDate: String,
+    var total: Int = 0,
+    var start: Int = 0,
+    var display: Int = 0,
+    var items: List<Item>
 )
