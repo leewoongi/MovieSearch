@@ -2,8 +2,10 @@ package com.experiencers.movie.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.text.Html
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.experiencers.data.remote.entity.Item
 import com.experiencers.movie.R
 import com.experiencers.movie.databinding.MovieItemBinding
+import com.experiencers.movie.ui.MovieWebView
 import kotlin.collections.ArrayList
 
 class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
@@ -48,6 +51,12 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
             binding.tvMovieScore.text = "평점: " + item.userRating.toString()
             if(item.image != null){
                 Glide.with(binding.root.context).load(item.image).override(100,100).into(binding.ivMovie)
+            }
+
+            binding.ivMovie.setOnClickListener {
+                val intent = Intent(binding.root.context, MovieWebView::class.java)
+                intent.putExtra("url", item.link)
+                binding.root.context.startActivity(intent)
             }
         }
     }
