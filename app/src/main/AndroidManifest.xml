@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name="com.experiencers.app.App"
         android:theme="@style/Theme.Movie">
         <activity android:name="com.experiencers.ui.movie.MainActivity">
             <intent-filter>
@@ -19,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".movie.MovieWebView"/>
+        <activity android:name=".movie.RecentlySearchActivity"/>
     </application>
 
 </manifest>
