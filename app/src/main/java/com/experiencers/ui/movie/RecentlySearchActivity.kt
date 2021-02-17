@@ -29,7 +29,7 @@ class RecentlySearchActivity: BaseActivity<ActivityRecentlySearchBinding>() {
         binding.rvRecentlyItem.apply {
             adapter = RecentlyItemAdapter()
             layoutManager =
-                GridLayoutManager(this@RecentlySearchActivity, 2)
+                GridLayoutManager(this@RecentlySearchActivity, 5)
         }
     }
 }
