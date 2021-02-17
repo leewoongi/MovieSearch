@@ -1,10 +1,9 @@
-package com.experiencers.movie.ui
+package com.experiencers.ui.movie
 
-import android.content.Intent
 import android.os.Bundle
 import com.experiencers.base.BaseActivity
-import com.experiencers.movie.R
-import com.experiencers.movie.databinding.ActivityMovieWebviewBinding
+import com.experiencers.ui.R
+import com.experiencers.ui.databinding.ActivityMovieWebviewBinding
 
 class MovieWebView: BaseActivity<ActivityMovieWebviewBinding>() {
     override fun layoutRes(): Int = R.layout.activity_movie_webview
@@ -16,6 +15,5 @@ class MovieWebView: BaseActivity<ActivityMovieWebviewBinding>() {
         if (webViewUrl != null) {
             binding.wv.loadUrl(webViewUrl)
         }
-
     }
 }

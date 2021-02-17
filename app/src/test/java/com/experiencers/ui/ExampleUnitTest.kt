@@ -1,4 +1,4 @@
-package com.experiencers.movie
+package com.experiencers.ui
 
 import org.junit.Test
 
