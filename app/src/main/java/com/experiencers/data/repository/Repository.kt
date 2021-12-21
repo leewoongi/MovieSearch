@@ -15,6 +15,7 @@ class Repository {
     private val clientSecret: String ="QGavQEkSPH"
     private val coroutineContext: CoroutineContext = Dispatchers.IO + Job()
 
+    // 테스트 주석 비트라이즈
     suspend fun getMovieList(movieTitle: String): List<Item> =
         withContext(coroutineContext) {
             webservice.getMovies(clientId, clientSecret, movieTitle).body()?.items?: listOf()
