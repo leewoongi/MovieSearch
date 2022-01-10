@@ -4,6 +4,16 @@ plugins {
 }
 
 android {
+
+//    signingConfigs {
+//        production {
+//            storeFile file("/keystore")
+//            storePassword "TestTest"
+//            keyAlias "TestTest"
+//            keyPassword "TestTest"
+//        }
+//    }
+
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -21,6 +31,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.production
+
         }
     }
     compileOptions {
