@@ -17,6 +17,7 @@ class Repository {
 
     // 테스트 주석 비트라이즈
     // 테스트
+    // s3업데이트 테스트
     suspend fun getMovieList(movieTitle: String): List<Item> =
         withContext(coroutineContext) {
             webservice.getMovies(clientId, clientSecret, movieTitle).body()?.items?: listOf()
